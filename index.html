@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Портфолио — Владислав Орлов</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to right, #0f172a, #1e3a8a);
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+    .avatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #94a3b8;
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeIn 1s forwards;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    .section-content {
+      color: #f3f4f6;
+      line-height: 1.6;
+      font-size: 1rem;
+      max-width: 800px;
+    }
+    .contact-btn {
+      background-color: #1D4ED8;
+      padding: 12px 24px;
+      color: white;
+      border-radius: 9999px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+      margin-top: 30px;
+    }
+    .contact-btn:hover {
+      background-color: #2563EB;
+    }
+    footer {
+      background: linear-gradient(to right, #3B82F6, #2563EB);
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      border-top: 2px solid #94a3b8;
+    }
+    footer p {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 500;
+      opacity: 0.85;
+    }
+    .project-card {
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .project-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+    }
+    .project-card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .quote {
+      font-style: italic;
+      color: #f3f4f6;
+    }
+    .blog-card {
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .blog-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+    }
+    .blog-card-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .blog-card-description {
+      color: #f3f4f6;
+      line-height: 1.5;
+      font-size: 1rem;
+    }
+    .full-article {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      color: #f3f4f6;
+      display: none;
+      max-height: 500px;
+      overflow-y: auto;
+      animation: slideIn 1s forwards ease-in-out;
+    }
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .back-btn {
+      background-color: #2563EB;
+      padding: 12px 24px;
+      color: white;
+      border-radius: 9999px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header class="bg-gradient-to-r from-blue-500 to-blue-700 text-white p-10">
+    <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center md:justify-between gap-6">
+      <div>
+        <h1 class="text-4xl font-extrabold fade-in">Владислав Орлов</h1>
+        <p class="text-xl mt-2 fade-in">Разработка чат-ботов под ключ (Python)</p>
+        <p class="mt-2 text-sm fade-in">Пенза, Россия</p>
+      </div>
+      <div class="fade-in">
+        <img src="images/avatar.png" alt="Владислав Орлов" class="avatar" />
+        <a href="https://t.me/vladislavorlovenko" class="contact-btn" target="_blank">Связаться через Telegram</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 py-10">
+    <section id="about" class="mb-10">
+      <h2 class="section-title fade-in">Обо мне</h2>
+      <p class="section-content fade-in">
+        Привет! Я — разработчик чат-ботов на Python с 4-летним опытом работы в создании уникальных ботов для различных бизнесов. Я работаю с такими инструментами, как <strong>aiogram</strong>, <strong>asyncio</strong>, <strong>PostgreSQL</strong> и другими. Моя цель — создавать инструменты, которые упрощают и автоматизируют бизнес-процессы, делая их более эффективными и удобными. Я работал с такими компаниями, как <strong>TechBiz</strong>, <strong>FinTech Solutions</strong>, и помогал многим стартапам улучшить их онлайн-взаимодействие с клиентами.
+      </p>
+    </section>
+    <section id="projects" class="mb-10">
+      <h2 class="section-title fade-in">Проекты</h2>
+      <div id="project-list" class="project-card-container fade-in">
+        <div class="project-card">
+          <h3 class="text-xl font-bold">TaskBot — Бот для управления задачами в команде</h3>
+          <p>TaskBot помогает командам эффективно управлять задачами. Он позволяет создавать, отслеживать и делегировать задачи с возможностью настройки приоритетов и сроков выполнения. Вся работа синхронизируется в реальном времени, и команда всегда в курсе текущего состояния задач.</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Технологии: aiogram, PostgreSQL, asyncio</p>
+          <div class="quote">"TaskBot сэкономил нам столько времени на управлении проектами! Раньше мы тратим часы на согласования, теперь все происходит автоматически." — Алексей, Руководитель команды</div>
+        </div>
+
+        <div class="project-card">
+          <h3 class="text-xl font-bold">ShopBot — Бот для онлайн-магазина</h3>
+          <p>ShopBot — это бот, который помогает клиентам выбирать и заказывать товары в интернет-магазине. Он поддерживает поиск по категориям, сортировку по цене и даже подсказки по популярным товарам. Бот интегрирован с CRM-системой для отслеживания статуса заказов.</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Технологии: aiogram, MongoDB, Telegram API</p>
+          <div class="quote">"ShopBot значительно увеличил конверсии. Клиенты стали оформлять заказы быстрее, и наша служба поддержки освободилась от множества однотипных вопросов." — Даниил, Менеджер по продажам</div>
+        </div>
+
+        <div class="project-card">
+          <h3 class="text-xl font-bold">CryptoTracker — Бот для отслеживания криптовалют</h3>
+          <p>CryptoTracker позволяет пользователям отслеживать изменения в курсах криптовалют в реальном времени. Бот поддерживает уведомления о резких изменениях цен и может интегрироваться с различными API для получения самых актуальных данных.</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Технологии: aiogram, WebSocket, Machine Learning</p>
+          <div class="quote">"CryptoTracker стал моим лучшим другом на рынке криптовалют. Вся информация в реальном времени — просто неоценимая помощь!" — Олег, Криптовалютный трейдер</div>
+        </div>
+
+        <div class="project-card">
+          <h3 class="text-xl font-bold">WeatherBot — Прогноз погоды для пользователей</h3>
+          <p>WeatherBot предоставляет точные прогнозы погоды для любого города. Пользователи могут получить прогноз на несколько дней вперед и настроить уведомления для получения информации в удобное время.</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Технологии: aiogram, OpenWeatherMap API</p>
+          <div class="quote">"Мы интегрировали WeatherBot в наш сервис, и теперь наши пользователи всегда в курсе погоды. Это добавляет ценности и делает наш сервис еще более удобным." — Наталья, Менеджер по продукту</div>
+        </div>
+
+
+        <div class="project-card">
+          <h3 class="text-xl font-bold">EduBot — Бот для обучения</h3>
+          <p>EduBot помогает обучать пользователей различным дисциплинам, предоставляя уроки, тесты и домашние задания. Встроенная система оценки позволяет отслеживать успехи студентов.</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Технологии: aiogram, PostgreSQL, Firebase</p>
+          <div class="quote">"EduBot стал отличным дополнением для наших курсов. Он помогает студентам учиться и получать оценки, автоматизируя многие процессы." — Марина, Преподаватель</div>
+        </div>
+
+        <div class="project-card">
+          <h3 class="text-xl font-bold">SurveyBot — Бот для опросов</h3>
+          <p>SurveyBot помогает проводить опросы среди клиентов, собирая ответы и автоматически генерируя отчеты. Подходит для анализа предпочтений пользователей и улучшения сервиса.</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Технологии: aiogram, MongoDB</p>
+          <div class="quote">"SurveyBot позволил нам быстро собирать мнения клиентов и улучшить качество нашего сервиса." — Алексей, Менеджер по маркетингу</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="blog" class="mb-10">
+      <h2 class="section-title fade-in">Блог</h2>
+
+      <div class="blog-card fade-in">
+        <h3 class="blog-card-title">Как создать чат-бота с помощью aiogram</h3>
+        <p class="blog-card-description">В этой статье я расскажу, как быстро создать бота с использованием библиотеки <strong>aiogram</strong> для Telegram. Мы рассмотрим основные принципы работы, настройки и создание простого бота, который будет отвечать на сообщения пользователей.</p>
+        <a href="#" class="contact-btn" onclick="showArticle('article1')">Читать статью</a>
+      </div>
+
+      <div class="blog-card fade-in mt-6">
+        <h3 class="blog-card-title">Автоматизация процессов бизнеса с помощью чат-ботов</h3>
+        <p class="blog-card-description">Чат-боты могут значительно упростить и ускорить процессы внутри бизнеса. В этой статье я поделюсь опытом интеграции ботов в процессы продаж и клиентской поддержки, расскажу о преимуществах автоматизации с помощью ботов.</p>
+        <a href="#" class="contact-btn" onclick="showArticle('article2')">Читать статью</a>
+      </div>
+    </section>
+
+    <section id="article1" class="full-article fade-in">
+      <h2>Как создать чат-бота с помощью aiogram</h2>
+      <p>В этой статье я расскажу, как быстро создать бота с использованием библиотеки <strong>aiogram</strong> для Telegram. Мы рассмотрим основные принципы работы, настройки и создание простого бота, который будет отвечать на сообщения пользователей.</p>
+      <p><strong>Aiogram</strong> — это асинхронная библиотека для Python, которая позволяет легко и быстро создавать ботов для Telegram. Она основана на библиотеке <strong>asyncio</strong>, что позволяет делать обработку запросов пользователя быстро и эффективно.</p>
+      <p>Для начала вам нужно установить саму библиотеку:</p>
+      <pre><code>pip install aiogram</code></pre>
+      <p>Далее создаем файл с основным кодом бота:</p>
+      <pre><code>from aiogram import Bot, Dispatcher, types
+import asyncio
+
+API_TOKEN = 'YOUR_BOT_API_TOKEN'
+bot = Bot(token=API_TOKEN)
+dp = Dispatcher(bot)
+
+@dp.message_handler()
+async def echo(message: types.Message):
+    await message.answer(message.text)
+
+if __name__ == '__main__':
+    from aiogram import executor
+    executor.start_polling(dp)
+</code></pre>
+      <p>Этот бот будет просто отправлять пользователю то же сообщение, которое он отправит. Это базовый пример, но его можно расширять и добавлять более сложную логику.</p>
+      <a href="javascript:void(0)" class="back-btn" onclick="hideArticle('article1')">Назад</a>
+    </section>
+
+    <section id="article2" class="full-article fade-in">
+      <h2>Автоматизация процессов бизнеса с помощью чат-ботов</h2>
+      <p>Чат-боты могут значительно упростить и ускорить процессы внутри бизнеса. В этой статье я поделюсь опытом интеграции ботов в процессы продаж и клиентской поддержки, расскажу о преимуществах автоматизации с помощью ботов.</p>
+      <p>Чат-боты позволяют автоматизировать множество задач, таких как обработка заказов, ответы на часто задаваемые вопросы, поддержка пользователей 24/7. Важнейший аспект использования чат-ботов — это увеличение эффективности. Боты могут работать без перерывов и обрабатывать большое количество запросов одновременно.</p>
+      <p>Например, можно создать бота, который будет принимать заявки от клиентов, собирать их и автоматически отправлять на почту или в CRM-систему. Это значительно ускоряет процесс обработки заявок и снижает вероятность ошибок.</p>
+      <a href="javascript:void(0)" class="back-btn" onclick="hideArticle('article2')">Назад</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Владислав Орлов. Все права защищены.</p>
+  </footer>
+
+  <script>
+    function showArticle(articleId) {
+      const article = document.getElementById(articleId);
+      article.style.display = "block";
+    }
+
+    function hideArticle(articleId) {
+      document.getElementById(articleId).style.display = "none";
+    }
+  </script>
+</body>
+</html>
